@@ -1,8 +1,11 @@
 {
   "AppsyncWorkshopStack": {
     "STACKREGION": "us-east-2",
+    "ACLAPIAssoc": "arn:aws:appsync:us-east-2:843100716494:apis/vahcgf5jwnc3lb7leoq66xwq7m|arn:aws:wafv2:us-east-2:843100716494:regional/webacl/WorkshopAPI-ACL/a4c7eabd-6115-4136-8753-d0dea58b509a",
     "GraphQLAPIID": "vahcgf5jwnc3lb7leoq66xwq7m",
+    "ACLRef": "WorkshopAPI-ACL|a4c7eabd-6115-4136-8753-d0dea58b509a|REGIONAL",
     "GraphQLAPIURL": "https://iy77jpl2uvcyjgh6lk7p4es5ee.appsync-api.us-east-2.amazonaws.com/graphql",
+    "GraphQLAPIKEY": "da2-qzu6gphiu5ex5ccxuvr2ecmcxa",
     "USERPOOLSID": "us-east-2_hbOtHZ8hh",
     "USERPOOLSWEBCLIENTID": "13fhao7pb5a5c6juahigtr1n41"
   }
