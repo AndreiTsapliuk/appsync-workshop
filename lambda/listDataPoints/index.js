@@ -1,6 +1,13 @@
 const { DynamoDB } = require('aws-sdk')
 var client = new DynamoDB.DocumentClient()
 
+/**
+ * Map graphQL key to query expresion
+ *
+ * @async
+ * @param {{ for: string }} { for: key }
+ * @returns {String}
+ */
 const mapKeyToExpr = ({ for: key }) => {
   switch (key) {
     case 'gt':
@@ -22,6 +29,12 @@ const mapKeyToExpr = ({ for: key }) => {
   }
 }
 
+/**
+ * Prepare query params expression from graphql filter params
+ *
+ * @param {{ for: object }} { for: filter }
+ * @returns {Object}
+ */
 const expr = ({ for: filter }) => {
   if (!filter) return {}
   const key = Object.keys(filter)[0]
@@ -35,6 +48,22 @@ const expr = ({ for: filter }) => {
   }
 }
 
+/**
+ * Get listData lambda handler
+ *
+ * @async
+ * @param {*} {
+  with: {
+      owner,
+      name,
+      createdAt,
+      limit: Limit = 100,
+      nextToken,
+      sortDirection = 'ASC',
+    },
+  } query parameters for listDataPoints
+ * @returns {*}
+ */
 const listDataPoints = async ({
   with: {
     owner,
